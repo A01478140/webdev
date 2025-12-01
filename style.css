@@ -1,0 +1,147 @@
+/* 基础样式，模仿 Starbuzz 的字体设置 */
+body {
+    font-family: Verdana, Geneva, Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0px;
+}
+
+/* Header 样式 */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0px;
+    font-size: 200%;
+}
+
+/* 导航栏样式 - 使用简单的 Flexbox */
+nav {
+    background-color: #aa0000; /* 深红色主题 */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex; /* Flexbox 布局 */
+    justify-content: center; /* 居中排列 */
+}
+
+nav ul li {
+    margin: 0px;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover, nav ul li.selected {
+    background-color: #ff4444; /* 高亮颜色 */
+}
+
+/* 主要内容区域 */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto; /* 页面居中 */
+}
+
+/* 首页 Banner */
+#banner {
+    background-color: #ddd;
+    background-image: url('images/banner.jpg'); /* 需要一张 banner.jpg */
+    background-size: cover;
+    padding: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner-text {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* Reviews 页面：卡片布局 (Flexbox) */
+.review-container {
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    justify-content: space-between;
+}
+
+/* 单个卡片样式 */
+.review-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 30%; /* 桌面端一行三个 */
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box; /* 确保 padding 不增加宽度 */
+    
+    /* CSS Transition: Hover Zoom 效果 (项目要求) */
+    transition: transform 0.3s;
+}
+
+.review-card img {
+    width: 100%;
+    height: auto;
+}
+
+/* 悬停效果 (项目要求) */
+.review-card:hover {
+    transform: scale(1.05); /* 放大 5% */
+    box-shadow: 2px 2px 10px #888;
+}
+
+/* Contact 页面表单 */
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #aa0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: small;
+}
+
+/* 响应式设计 (项目要求) */
+/* 当屏幕宽度小于 600px 时 */
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* 导航变为垂直 */
+    }
+    
+    nav ul li a {
+        text-align: center;
+        border-bottom: 1px solid #cc0000;
+    }
+
+    .review-card {
+        width: 100%; /* 手机端卡片占满一行 */
+    }
+}
