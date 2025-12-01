@@ -1,15 +1,20 @@
-/* 基础样式，模仿 Starbuzz 的字体设置 */
+/* Project: MovieVerse
+   Course: ACIT 1620
+*/
+
+/* --- 基础样式 --- */
 body {
+    /* 模仿 Starbuzz 的字体设置 */
     font-family: Verdana, Geneva, Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0px;
+    background-color: #f4f4f4; /* 浅灰色背景，干净简洁 */
+    color: #333; /* 深灰色文字 */
+    margin: 0px; /* 去掉浏览器默认边距 */
 }
 
-/* Header 样式 */
+/* --- 头部 (Header) --- */
 header {
-    background-color: #222;
-    color: #fff;
+    background-color: #222; /* 深黑色背景 */
+    color: white;
     padding: 20px;
     text-align: center;
 }
@@ -17,18 +22,25 @@ header {
 header h1 {
     margin: 0px;
     font-size: 200%;
+    /* 这里没有用背景图，只靠文字和颜色 */
 }
 
-/* 导航栏样式 - 使用简单的 Flexbox */
+header p {
+    margin-top: 5px;
+    color: #ccc;
+    font-size: 90%;
+}
+
+/* --- 导航栏 (Navigation) - 使用 Flexbox --- */
 nav {
-    background-color: #aa0000; /* 深红色主题 */
+    background-color: #800000; /* 深红色，符合电影院主题 */
 }
 
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* 去掉列表前的点 */
     margin: 0px;
     padding: 0px;
-    display: flex; /* Flexbox 布局 */
+    display: flex; /* 【关键技术】Flexbox 布局 */
     justify-content: center; /* 居中排列 */
 }
 
@@ -40,108 +52,123 @@ nav ul li a {
     display: block;
     color: white;
     padding: 15px 20px;
-    text-decoration: none;
+    text-decoration: none; /* 去掉下划线 */
     font-weight: bold;
 }
 
+/* 导航悬停和选中状态 */
 nav ul li a:hover, nav ul li.selected {
-    background-color: #ff4444; /* 高亮颜色 */
+    background-color: #a00000; /* 稍微亮一点的红色 */
 }
 
-/* 主要内容区域 */
+/* --- 主要内容区域 (Main) --- */
 main {
     padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto; /* 页面居中 */
+    max-width: 1000px; /* 限制最大宽度 */
+    margin: 0 auto; /* 居中 */
 }
 
-/* 首页 Banner */
+/* --- 首页 Banner 区域 (无背景图版) --- */
 #banner {
-    background-color: #ddd;
-    background-image: url('images/banner.jpg'); /* 需要一张 banner.jpg */
-    background-size: cover;
-    padding: 50px;
+    background-color: #444; /* 深灰色纯色背景 */
+    color: white;
+    padding: 60px 20px; /* 增加内边距，让它看起来大气的 */
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px; /* 圆角，稍微好看点 */
 }
 
-.banner-text {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    display: inline-block;
-    border-radius: 5px;
+#banner h2 {
+    color: #ffcc00; /* 金黄色标题，突出重点 */
+    margin-top: 0;
 }
 
-/* Reviews 页面：卡片布局 (Flexbox) */
+/* --- Reviews 页面：卡片容器 --- */
 .review-container {
-    display: flex;
+    display: flex; /* 【关键技术】Flexbox 布局 */
     flex-wrap: wrap; /* 允许换行 */
-    justify-content: space-between;
+    justify-content: space-between; /* 两端对齐，中间留空 */
 }
 
-/* 单个卡片样式 */
+/* --- 单个评论卡片 --- */
 .review-card {
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd; /* 很淡的边框 */
     width: 30%; /* 桌面端一行三个 */
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 15px;
-    box-sizing: border-box; /* 确保 padding 不增加宽度 */
+    box-sizing: border-box; /* 确保内边距不撑大盒子 */
     
-    /* CSS Transition: Hover Zoom 效果 (项目要求) */
-    transition: transform 0.3s;
+    /* 【关键技术】Transition: 只有放大效果，没有阴影 */
+    transition: transform 0.3s; 
 }
 
+/* 这里的图片是海报，使用 <img> 标签插入的 */
 .review-card img {
-    width: 100%;
+    width: 100%; /* 让海报宽度自适应卡片 */
     height: auto;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
 }
 
-/* 悬停效果 (项目要求) */
+.review-card h3 {
+    margin-top: 10px;
+    font-size: 110%;
+}
+
+/* 悬停效果 - 只有简单的放大 */
 .review-card:hover {
-    transform: scale(1.05); /* 放大 5% */
-    box-shadow: 2px 2px 10px #888;
+    transform: scale(1.05);
 }
 
-/* Contact 页面表单 */
+/* --- Contact 页面表单 --- */
 input, textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
+    margin-bottom: 15px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-family: inherit;
 }
 
 button {
-    background-color: #aa0000;
+    background-color: #800000;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border: none;
     cursor: pointer;
+    font-size: 100%;
 }
 
-/* Footer */
+button:hover {
+    background-color: #a00000;
+}
+
+/* --- 页脚 (Footer) --- */
 footer {
     background-color: #222;
-    color: white;
+    color: #888;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: small;
+    border-top: 5px solid #800000; /* 顶部加条红线呼应导航 */
 }
 
-/* 响应式设计 (项目要求) */
-/* 当屏幕宽度小于 600px 时 */
-@media screen and (max-width: 600px) {
+/* --- 响应式设计 (Responsive Design) --- */
+/* 当屏幕宽度小于 768px (手机/平板) 时执行 */
+@media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* 导航变为垂直 */
+        flex-direction: column; /* 导航变为垂直堆叠 */
     }
     
     nav ul li a {
         text-align: center;
-        border-bottom: 1px solid #cc0000;
+        border-bottom: 1px solid #900000;
     }
 
     .review-card {
-        width: 100%; /* 手机端卡片占满一行 */
+        width: 100%; /* 卡片宽度变为 100%，一行一个 */
     }
 }
