@@ -172,3 +172,25 @@ footer {
         width: 100%; /* 卡片宽度变为 100%，一行一个 */
     }
 }
+/* --- Footer (页脚) --- */
+footer {
+    background-color: #222;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: small;
+    border-top: 5px solid #800000;
+}
+
+/* 社交链接样式 */
+footer .social-links a {
+    color: #ccc; /* 浅灰色链接 */
+    text-decoration: none; /* 去掉下划线 */
+    margin: 0 5px; /* 链接之间留点空隙 */
+}
+
+footer .social-links a:hover {
+    color: white; /* 悬停变白 */
+    text-decoration: underline; /* 悬停加下划线，增加交互感 */
+}
