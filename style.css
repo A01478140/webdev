@@ -85,3 +85,92 @@ main {
     justify-content: space-between;
 }
 
+.review-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    width: 30%;
+    margin-bottom: 25px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.review-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+/* --- Contact 表单样式 --- */
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+button {
+    background-color: #800000;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 100%;
+}
+
+button:hover {
+    background-color: #a00000;
+} 
+/* ↑↑↑ 之前可能这里漏了右大括号，导致下面的 footer 失效 */
+
+/* --- Footer (页脚) --- */
+footer {
+    background-color: #222;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: small;
+    border-top: 5px solid #800000;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* 社交链接样式 */
+footer .social-links a {
+    color: #ccc; 
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+footer .social-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- 响应式设计 --- */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li a {
+        text-align: center;
+        border-bottom: 1px solid #900000;
+    }
+
+    .review-card {
+        width: 100%;
+    }
+}
